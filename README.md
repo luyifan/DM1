@@ -1,0 +1,8 @@
+4. Text Classification with Naive Bayes
+In this problem, you will implement a text classifier using Naive Bayes method. The dataset we are using is forum posts crawled from cc98. And we will use Kaggle5 to grade your clas- sifier. Please check out https://inclass.kaggle.com/c/text-classification for more details. Since MATLAB is not good at text processing and lack of some useful data structure, you can use any programming language you like in this assignment.
+￼i) Preprocessing and Representation. The first step of our text classifier is to pre-process raw data and extract features. We usually represent text data as document-term matrix, where the ith row represents the ith document, and the j th column represents the j th term/word. Thus the (i, j )-entry of the matrix represents the number of occurrences of the jth term in the ith document.
+So we need first pass the dataset and choose our set of terms (vocabulary). Then we can use the vocabulary to convert documents into vectors and combine vectors as a document-term matrix. You may filter words with very high frequency (like ‘a’, ‘the’, ‘to’) and words with very low frequency out of the vocabulary, since they are unlikely to have much classification value.
+Since the document-term matrix is very sparse (most of entries are 0), you may use this proprietary to find an efficiency way to store it.
+ii) Training. After feature extraction, you can train your naive Bayes model on the document-term matrix got from preprocessing step. This should be straight-forward. Do not forget Laplace smoothing.
+iii) Testing. When you compute p(x|y) = ∏ p(xi|y), you may experience float- i
+ing underflow problem. You can use logarithm to avoid this issue..
